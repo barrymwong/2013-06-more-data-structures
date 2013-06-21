@@ -16,5 +16,22 @@ describe("linkedList", function() {
     expect(linkedList.contains).toEqual(jasmine.any(Function));
   });
 
-  // add more tests here to test the functionality of linkedList
+
+   // add more tests here to test the functionality of linkedList
+  it("should add a new node to the end of the linked list", function() {
+    linkedList.addToTail(10);
+    linkedList.addToTail(100);
+    linkedList.addToTail(1000);
+    
+    expect(linkedList.head).toEqual({value: 10, next: null});
+  });
+
+     // add more tests here to test the functionality of linkedList
+  it("should add a new node to the end of the linked list", function() {
+    linkedList.addToTail(10);
+    
+    expect(linkedList.addToTail(100)).toEqual({value: 100, next: null});
+  });  
+
+ 
 });
