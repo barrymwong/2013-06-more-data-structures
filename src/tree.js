@@ -9,7 +9,6 @@
 // reflecting whether it can be found as the value of the
 // target node or any descendant node
 
-var exists = false;
 var makeTree = function(val){
   var newTree = {};
   newTree.value = val;
@@ -21,17 +20,15 @@ var makeTree = function(val){
 var treeMethods = {};
 
 treeMethods.addChild = function(val){
-  if(exists === true){
-    this.children = makeTree(val);
-  } else {
-    exists = true;
-    return makeTree(val);
-  }
-
+    this.children.push(makeTree(val)); // change to push.()
 };
 
-treeMethods.contains = function(){
+treeMethods.contains = function(val){
 };
+
+
+
+
 
 
 /*

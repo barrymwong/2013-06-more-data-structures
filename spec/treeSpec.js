@@ -13,16 +13,22 @@ describe("tree", function() {
 
   it("should add the first node with properties value and children", function() {
     //debugger;
-    var a = tree.addChild(10);
-    expect(a.value).toEqual(10);
+    expect(tree.value).toEqual(undefined);
     //expect(tree.children).toEqual([]);
   });
 
-  it("should add a child node to the original parent", function() {
+  it("should add a child node to the parent", function() {
     tree.addChild(10);
-    tree.addChild(100);
-    expect(tree.children.value).toEqual(100);
+    expect(tree.children[0].value).toEqual(10);
   });
 
+  it("should add multiple children to parent", function() {
+    tree.addChild(1);
+    tree.addChild(2);
+    tree.addChild(3);
+    expect(tree.children[0].value).toEqual(1);
+    expect(tree.children[1].value).toEqual(2);
+    expect(tree.children[2].value).toEqual(3);
+  });
   // Add more tests here to test the functionality of tree.
 });
