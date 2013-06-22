@@ -4,7 +4,7 @@ describe("linkedList", function() {
   beforeEach(function() {
     linkedList = makeLinkedList();
   });
-/*
+
   it("should have a head and tail", function() {
     expect(Object.keys(linkedList)).toContain("head");
     expect(Object.keys(linkedList)).toContain("tail");
@@ -31,7 +31,7 @@ describe("linkedList", function() {
     linkedList.addToTail(100);
     linkedList.addToTail(1000);
 
-    expect(linkedList.head).toEqual({value: 10, next: null});
+    expect(linkedList.head.value).toEqual(10);
   });
      // add more tests here to test the functionality of linkedList
   it("should add a new node to the end of the linked list", function() {
@@ -39,16 +39,21 @@ describe("linkedList", function() {
 
     expect(linkedList.addToTail(100)).toEqual({value: 100, next: null});
   });
-*/
+
   it("change the.next property of the previous node to equal the new tail", function() {
-    debugger;
+    linkedList.addToTail(10);
+    linkedList.addToTail(100);
+    expect(linkedList.head.next.value).toEqual(100);
+    linkedList.addToTail(1000);
+    expect(linkedList.head.next.next.value).toEqual(1000);
+  });
+
+  it("should remove current head and move head to next node", function() {
     linkedList.addToTail(10);
     linkedList.addToTail(100);
     linkedList.addToTail(1000);
-    //console.log(newLinkedList.tail);
-
-    expect(linkedList.middle.next).toEqual(linkedList.tail);
-    //expect(linkedList.addToTail(100)).toEqual({value: 100, next: null});
+    linkedList.removeHead();
+    expect(linkedList.head.value).toEqual(100);
   });
 
 });

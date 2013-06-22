@@ -14,9 +14,12 @@ var makeLinkedList = function(){
     tail: null,
     addToTail: function(value){
       // tail should be most recent node
-      //var oldTail = list.tail;
-
-      list.tail = makeNode(value);
+      if(list.tail !== null){
+        list.tail.next = makeNode(value);
+        list.tail = list.tail.next;
+      } else {
+        list.tail = makeNode(value);
+      }
       // if head doesn't exist, then set the head to tail (only for the first head)
       if(!list.head) {
         list.head = list.tail;
@@ -26,6 +29,9 @@ var makeLinkedList = function(){
     },
 
     removeHead: function(){
+      var temp = list.head;
+      list.head = list.head.next;
+      delete temp;
     },
 
     contains: function(){
