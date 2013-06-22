@@ -60,7 +60,7 @@ describe("linkedList", function() {
     linkedList.addToTail(10);
     linkedList.addToTail(100);
     linkedList.addToTail(1000);
-    expect(linkedList.contains(10)).toEqual(true);
+    expect(linkedList.contains(5)).toEqual(false);
   });
 
 });

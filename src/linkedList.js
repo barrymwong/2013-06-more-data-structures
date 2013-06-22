@@ -39,12 +39,12 @@ var makeLinkedList = function(){
 
       var sub = function(param){
         var searchNext1 = param;
-        if(searchNext1.value !== search){
-          console.log(searchNext1.value);
+        if(searchNext1.value !== search && searchNext1.next !== null){
           return sub(searchNext1.next);
-        } else {
-          console.log('true');
+        } else if(searchNext1.value === search) {
           return true;
+        } else {
+          return false;
         }
       };
       return sub(searchNext);
