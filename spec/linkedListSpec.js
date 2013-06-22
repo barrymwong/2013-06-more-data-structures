@@ -4,7 +4,7 @@ describe("linkedList", function() {
   beforeEach(function() {
     linkedList = makeLinkedList();
   });
-
+/*
   it("should have a head and tail", function() {
     expect(Object.keys(linkedList)).toContain("head");
     expect(Object.keys(linkedList)).toContain("tail");
@@ -38,6 +38,17 @@ describe("linkedList", function() {
     linkedList.addToTail(10);
 
     expect(linkedList.addToTail(100)).toEqual({value: 100, next: null});
+  });
+*/
+  it("change the.next property of the previous node to equal the new tail", function() {
+    debugger;
+    linkedList.addToTail(10);
+    linkedList.addToTail(100);
+    linkedList.addToTail(1000);
+    //console.log(newLinkedList.tail);
+
+    expect(linkedList.middle.next).toEqual(linkedList.tail);
+    //expect(linkedList.addToTail(100)).toEqual({value: 100, next: null});
   });
 
 });
