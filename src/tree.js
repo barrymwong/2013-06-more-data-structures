@@ -20,10 +20,23 @@ var makeTree = function(val){
 var treeMethods = {};
 
 treeMethods.addChild = function(val){
-    this.children.push(makeTree(val)); // change to push.()
+  this.children.push(makeTree(val)); // change to push.()
 };
 
 treeMethods.contains = function(val){
+  var node = this.children;
+  var sub = function(node) {
+    for(var i = 0; i < node.length; i++) {
+      if(node[i].value === val){
+        return true;
+      } else if(node[i].children) {
+        return sub(node[i].children);
+      }
+      return false;
+    }
+
+  };
+  return sub(node);
 };
 
 

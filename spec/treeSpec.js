@@ -31,10 +31,21 @@ describe("tree", function() {
     expect(tree.children[2].value).toEqual(3);
   });
 
-   it("should add grandchildren to parent", function() {
+  it("should add grandchildren to parent", function() {
     tree.addChild(1);
     tree.children[0].addChild(10);
     expect(tree.children[0].children[0].value).toEqual(10);
   });
   // Add more tests here to test the functionality of tree.
+
+  it("should recurse through tree to find value", function() {
+    tree.addChild(1);
+    tree.addChild(2);
+    tree.addChild(3);
+    tree.children[0].addChild(10);
+    tree.children[0].children[0].addChild(100);
+    //console.log(tree.children[0].children[0].children[0].value);
+    expect(tree.contains(10)).toEqual(true);
+  });
+
 });
