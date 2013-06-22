@@ -34,7 +34,20 @@ var makeLinkedList = function(){
       delete temp;
     },
 
-    contains: function(){
+    contains: function(search){
+      var searchNext = list.head;
+
+      var sub = function(param){
+        var searchNext1 = param;
+        if(searchNext1.value !== search){
+          console.log(searchNext1.value);
+          return sub(searchNext1.next);
+        } else {
+          console.log('true');
+          return true;
+        }
+      };
+      return sub(searchNext);
     }
 
   };
