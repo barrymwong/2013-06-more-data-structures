@@ -30,5 +30,11 @@ describe("tree", function() {
     expect(tree.children[1].value).toEqual(2);
     expect(tree.children[2].value).toEqual(3);
   });
+
+   it("should add grandchildren to parent", function() {
+    tree.addChild(1);
+    tree.children[0].addChild(10);
+    expect(tree.children[0].children[0].value).toEqual(10);
+  });
   // Add more tests here to test the functionality of tree.
 });
