@@ -35,20 +35,27 @@ var makeLinkedList = function(){
     },
 
     contains: function(search){
-      var searchNext = list.head;
-
-      var sub = function(param){
-        var searchNext1 = param;
-        if(searchNext1.value !== search && searchNext1.next !== null){
-          return sub(searchNext1.next);
-        } else if(searchNext1.value === search) {
+      var sub = function(node){
+        var nextNode = node;
+        if(nextNode.value !== search && nextNode.next !== null){
+          return sub(nextNode.next);
+        } else if(nextNode.value === search) {
           return true;
-        } else {
-          return false;
         }
+        return false;
       };
-      return sub(searchNext);
+      return sub(list.head);
     }
+
+    // contains: function(search, node) {
+    //   node = node || list.head;
+    //   if (node.value === search) {
+    //     return true;
+    //   } else if (node.next) {
+    //     return list.contains(search, node.next);
+    //   }
+    //   return false;
+    // }
 
   };
 

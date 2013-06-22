@@ -56,11 +56,18 @@ describe("linkedList", function() {
     expect(linkedList.head.value).toEqual(100);
   });
 
-   it("should find a value by traversing through the linked chain", function() {
+   it("should return false when value not found", function() {
     linkedList.addToTail(10);
     linkedList.addToTail(100);
     linkedList.addToTail(1000);
     expect(linkedList.contains(5)).toEqual(false);
+  });
+
+   it("should find a value by traversing through the linked chain", function() {
+    linkedList.addToTail(10);
+    linkedList.addToTail(100);
+    linkedList.addToTail(1000);
+    expect(linkedList.contains(1000)).toEqual(true);
   });
 
 });
