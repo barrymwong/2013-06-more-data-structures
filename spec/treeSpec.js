@@ -11,5 +11,9 @@ describe("tree", function() {
     expect('value' in tree).toBe(true);
   });
 
+  it("should add the first node", function() {
+    expect(tree.addChild(10).value).toEqual(10);
+  });
+
   // Add more tests here to test the functionality of tree.
 });

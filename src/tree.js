@@ -20,7 +20,7 @@ var makeTree = function(val){
 var treeMethods = {};
 
 treeMethods.addChild = function(val){
-  makeTree(val);
+  return makeTree(val);
 };
 
 treeMethods.contains = function(){
