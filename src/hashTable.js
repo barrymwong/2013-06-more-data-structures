@@ -15,7 +15,7 @@ HashTable.prototype.insert = function(value){
 };
 
 HashTable.prototype.retrieve = function(index){
-  this._storage.get(index);
+  return this._storage.get(index);
 };
 
 HashTable.prototype.remove = function(){
