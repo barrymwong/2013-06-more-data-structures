@@ -33,6 +33,41 @@ if(this.value === target){
     });
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// treeMethods.contains = function(val){
+//   for(var i = 0; i < this.children.length; i++) {
+//     console.log(this.children[i]);
+//     if(this.children[i].value === val){
+//       return true;
+//     } else {
+//       return this.children[i].contains(val);
+//     }
+//     //return false;
+//   }
+// };
 // do with reduce, and just recursion as well
 
   // otherwise, return true if any child's value is the taget
