@@ -10,5 +10,10 @@ describe("hashTable", function() {
     expect(hashTable.retrieve).toEqual(jasmine.any(Function));
   });
 
+  it("insert a new string at the given index", function() {
+    hashTable.insert('hey');
+    expect(hashTable._storage.get(3)).toEqual('hey');
+  });
+
   // add more tests here to test the functionality of hashTable
 });
