@@ -33,7 +33,7 @@ if(this.value === target){
     });
   }
 };
-
+// do with reduce, and just recursion as well
 
   // otherwise, return true if any child's value is the taget
 
