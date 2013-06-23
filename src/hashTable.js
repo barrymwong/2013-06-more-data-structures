@@ -9,13 +9,17 @@ var HashTable = function(){
   this._storage = makeLimitedArray(this._limit);
 };
 
-HashTable.prototype.insert = function(value){
+HashTable.prototype.insert = function(key, value){
   var index = getIndexBelowMaxForKey(value, this._limit);
-  this._storage.set(index, value);
+  this._storage.set(index, [key, value]);
 };
 
-HashTable.prototype.retrieve = function(index){
-  return this._storage.get(index);
+HashTable.prototype.retrieve = function(key){
+  for(var i = 0; i < this._limit; i++ ){
+    if(this._storage.get(i) && this._storage.get(i)[0] === key) {
+      return this._storage.get(i)[1];
+    }
+  }
 };
 
 HashTable.prototype.remove = function(value){
