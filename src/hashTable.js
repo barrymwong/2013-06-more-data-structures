@@ -10,7 +10,7 @@ var HashTable = function(){
 };
 
 HashTable.prototype.insert = function(value){
-  var index = getIndexBelowMaxForKey(value, 8);
+  var index = getIndexBelowMaxForKey(value, this._limit);
   this._storage.set(index, value);
 };
 
