@@ -12,7 +12,7 @@ describe("hashTable", function() {
 
   it("insert a new string at the given index", function() {
     hashTable.insert('hey');
-    expect(hashTable._storage.get(3)).toEqual('hey');
+    expect(hashTable._storage.get(6)).toEqual('hey');
   });
 
   // add more tests here to test the functionality of hashTable
