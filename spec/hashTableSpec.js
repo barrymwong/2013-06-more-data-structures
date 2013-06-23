@@ -10,16 +10,23 @@ describe("hashTable", function() {
     expect(hashTable.retrieve).toEqual(jasmine.any(Function));
   });
 
-  it("insert a new string at the given index", function() {
-    hashTable.insert('hey');
-    hashTable.insert('hello');
-    expect(hashTable._storage.get(6)).toEqual('hey');
-    expect(hashTable._storage.get(4)).toEqual('hello');
+  it("insert a key and value", function() {
+    hashTable.insert('greeting', 'hey');
+    hashTable.insert('formal greeting', 'hello');
+    expect(hashTable.retrieve('greeting')).toEqual('hey');
+    expect(hashTable.retrieve('formal greeting')).toEqual('hello');
   });
 
-  it("insert a new string at the given index", function() {
+  it("use retrieve to find a value", function() {
+    hashTable.insert('greeting', 'hey');
+    hashTable.insert('formal greeting', 'hello');
+    expect(hashTable.retrieve('formal greeting')).toEqual('hello');
+  });
+
+  it("should remove an element", function() {
     hashTable.insert('hey'); // 6
     hashTable.insert('hello'); // 4
+    hashTable.remove('hello');
     expect(hashTable.retrieve(4)).toEqual('hello');
   });
 
